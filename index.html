@@ -3,20 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figures for My Paper</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Topic Modeling for Behavioral Patterns</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .figure-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .figure-container img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .figure-container figcaption {
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+        }
+        .caption {
+            margin-top: 20px;
+            font-size: 0.95em;
+            color: #444;
+            text-align: justify;
+        }
+    </style>
 </head>
 <body>
-    <h1>Figures for My Paper</h1>
-    <div>
+    <h1>Topic Modeling for Behavioral Patterns</h1>
+
+    <div class="figure-container">
         <figure>
-            <img src="figure1.png" alt="Figure 1">
-            <figcaption>Figure 1: Description of the first figure.</figcaption>
+            <img src="topic-modeling-for-behavioral-patterns/Figure 1 (a)-Topic projection using t-SNE.png" alt="t-SNE projection with 7 crossing links">
+            <figcaption>Figure 1a: Topic projection using t-SNE has the least distortion with 7 crossing links.</figcaption>
         </figure>
+    </div>
+
+    <div class="figure-container">
         <figure>
-            <img src="figure2.png" alt="Figure 2">
-            <figcaption>Figure 2: Description of the second figure.</figcaption>
+            <img src="topic-modeling-for-behavioral-patterns/Figure 1 (b)-Topic projection using UMAP.png" alt="UMAP projection with 15 crossing links">
+            <figcaption>Figure 1b: Topic projection using UMAP, with 15 crossing links, shows more distortion than t-SNE but less than MDS.</figcaption>
         </figure>
+    </div>
+
+    <div class="figure-container">
+        <figure>
+            <img src="topic-modeling-for-behavioral-patterns/Figure 1 (c)-Topic projection using MDS.png" alt="MDS projection with many crossing links">
+            <figcaption>Figure 1c: Topic projection using MDS with many crossing links has the most distortion.</figcaption>
+        </figure>
+    </div>
+
+    <div class="caption">
+        <strong>Overall Caption:</strong> 1D projections of topics obtained from topic modeling are shown for topic numbers ranging from 10 to 28. Each row represents the projection for a specific topic number. The dimensionality reduction techniques applied in these projections are: (a) t-SNE, (b) UMAP, and (c) MDS. Each topic is connected to its most similar topics in the projections above and below. The projection technique with fewer crossing links (t-SNE in our case with 7 crossings) is the best option for further analysis.
     </div>
 </body>
 </html>
