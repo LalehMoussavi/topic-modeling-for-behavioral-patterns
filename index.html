@@ -17,7 +17,7 @@
             color: #333;
         }
         .figure-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 20px auto;
             background: #fff;
             padding: 20px;
@@ -26,41 +26,120 @@
         }
         .figure-container img {
             width: 100%;
+            max-width: 800px; /* Constrain the maximum width */
             height: auto;
             border: 1px solid #ddd;
             border-radius: 4px;
-            margin-bottom: 10px;
+            display: block;
+            margin: 0 auto;
         }
         .figure-container figcaption {
             font-size: 0.9em;
             color: #555;
+            margin-top: 10px;
             text-align: center;
+        }
+        .overall-caption {
+            text-align: center;
+            font-size: 0.95em;
+            color: #333;
+            margin-top: 20px;
+        }
+        /* Figure 2a */
+        .figure-2a img {
+            width: 100%;
+            max-width: 1000px; /* Maximize the size for Figure 2a */
+            height: auto;
+        }
+        /* Figure 2b */
+        .figure-2b img {
+            width: 100%;
+            max-width: 50px; /* Reduce the width for Figure 2b */
+            height: auto;
+            max-height: 300px; /* Constrain vertical size */
         }
     </style>
 </head>
 <body>
     <h1>Visually-supported Topic Modeling for Understanding Behavioral Patterns from Spatio-temporal Events</h1>
 
+    <!-- Figures 1a, 1b, and 1c -->
     <div class="figure-container">
-        <figure>
-            <img src="https://raw.githubusercontent.com/LalehMoussavi/topic-modeling-for-behavioral-patterns/main/figure1a.png" alt="t-SNE projection with 7 crossing">
-            
-            <figcaption>Figure 1a: Topic projection using t-SNE has the least distortion with 7 crossing links.</figcaption>
+        <figure class="subfigure">
+            <img src="paper_figures/Used in the paper/Figure 1 (a)-Topic projection using t-SNE.png" alt="t-SNE projection with 7 crossing">
+            <figcaption>(a) Topic projection using t-SNE has the least distortion with 7 crossing links.</figcaption>
+        </figure>
+        <figure class="subfigure">
+            <img src="paper_figures/Used in the paper/Figure 1 (b)-Topic projection using UMAP.png" alt="UMAP projection with 15 crossing links">
+            <figcaption>(b) Topic projection using UMAP, with 15 crossing links, shows more distortion than t-SNE but less than MDS.</figcaption>
+        </figure>
+        <figure class="subfigure">
+            <img src="paper_figures/Used in the paper/Figure 1 (c)-Topic projection using MDS.png" alt="MDS projection with many crossing links">
+            <figcaption>(c) Topic projection using MDS with many crossing links has the most distortion.</figcaption>
+        </figure>
+        <div class="overall-caption">
+            1D projections of topics obtained from topic modeling are shown for topic numbers ranging from 10 to 28. Each row represents the projection for a specific topic number. The dimensionality reduction techniques applied in these projections are: (a) t-SNE, (b) UMAP, and (c) MDS. Each topic is connected to its most similar topics in the projections above and below. The projection technique with fewer crossing links (t-SNE in our case with 7 crossings) is the best option for further analysis.
+        </div>
+    </div>
+
+    <!-- Figures 2a and 2b -->
+    <div class="figure-container">
+        <!-- Figure 2a -->
+        <figure class="figure-2a">
+            <img src="paper_figures/Used in the paper/Figure 2 (a)-spatial heatmaps derived from topic modeling, covering topic numbers ranging from 10 to 28.png" alt="Spatial heatmaps derived from topic modeling">
+            <figcaption>
+                <strong>Figure 2a:</strong> A comprehensive visualization of topic signatures (spatial heatmaps), derived from topic modeling across a range of topic numbers (10 to 28, as labeled at each line). Each heatmap represents a football pitch, with the darkness of its grid cells proportional to the respective weights in the topic-term matrix. The attacking direction is from bottom to top. The final selected topic number is 16 (indicated by an arrow). The group in the pink rectangle illustrates spatial consistency, while the group in the brown rectangle demonstrates redundancy.
+            </figcaption>
+        </figure>
+        
+        <!-- Figure 2b -->
+        <figure class="figure-2b">
+            <img src="paper_figures/Used in the paper/Figure 2 (b)-Interactive_decomposition.png" alt="Interactive decomposition of selected topics">
+            <figcaption>
+                <strong>Figure 2b:</strong> A detailed view of the topics selected within the brown rectangle. The interactive tool highlights topics with cells colored red/blue when higher/lower than the average of the selection. The presence of red cells in the first three rows and a mix of red and blue cells in the last three rows suggests that the cell values have been distributed between two similar topics in the branches.
+            </figcaption>
         </figure>
     </div>
 
+    <!-- Figure 3 -->
     <div class="figure-container">
         <figure>
-            <img src="figure1b.png" alt="UMAP projection with 15 crossing links">
-            <figcaption>Figure 1b: Topic projection using UMAP, with 15 crossing links, shows more distortion than t-SNE but less than MDS.</figcaption>
+            <img src="paper_figures/Used in the paper/Figure 3-Detailed view of the topic footprints.png" alt="Detailed view of the topic footprints">
+            <figcaption>
+                <strong>Figure 3:</strong> A detailed view of the topic footprints on a football pitch, with 16 topics. Each grid cell’s intensity reflects the corresponding weight in the topic-term matrix, providing a clear visual understanding of the spatial patterns associated with each topic.
+            </figcaption>
         </figure>
     </div>
 
+    <!-- Figure 4 -->
     <div class="figure-container">
         <figure>
-            <img src="topic-modeling-for-behavioral-patterns/figure1c.png" alt="MDS projection with many crossing links">
-            <figcaption>Figure 1c: Topic projection using MDS with many crossing links has the most distortion.</figcaption>
+            <img src="paper_figures/Used in the paper/Figure 4- Second half Barcelona Real Madrid, 2 - 2.png" alt="Second half Barcelona Real Madrid, 2 - 2">
+            <figcaption>
+                <strong>Figure 4:</strong> This figure shows data from the second half of the Barcelona vs.Real Madrid match (May 2018, 2--2 draws). Left side: segmented bar charts on a timeline depict active topics (IDs 0--15), with Barcelona (above the dashed line, green) and Real Madrid (below, red). Each bar is labeled at the top with its dominant topic ID, along with markers for key match events and successful episodes. Right side: Summary columns compare aggregated topic weights (All, Successful, Unsuccessful) and include a difference plot to highlight contrasts between the two teams.
+            </figcaption>
         </figure>
     </div>
+
+    <!-- Figure 5 -->
+    <div class="figure-container">
+        <figure>
+            <img src="paper_figures/Used in the paper/Figure 5 full version-Spain ranking order.pdf" alt="full version-Spain ranking order">
+            <figcaption>
+                <strong>Figure 5:</strong> The full version of Figure 5 of the paper. Topic weight visualizations for LaLiga 2017–2018 season, sorted by team ranking. The strongest teams are positioned at the top-left, and the weakest at the bottom-right. Each cell represents the row team’s topic weights in a match against its opponent (column).On the right, summary columns present average topic distributions under different conditions (e.g., home and away). See Section~\ref{subsec:league-ranking} for more details.
+            </figcaption>
+        </figure>
+    </div>
+
+    <!-- Figure 6 -->
+    <div class="figure-container">
+        <figure>
+            <img src="paper_figures/Used in the paper/Figure 6 full version-Spain ranking order deviation.pdf">
+            <figcaption>
+                <strong>Figure 6:</strong> The full version of Figure 6 of the paper. Deviations of teams' topic weights from their overall average, sorted by team ranking. This visualization is similar to Figure~\ref{fig:ranking_order}, but each cell displays the deviation of the row team’s topic weights from its mean values. These deviations are visualized as stacks of colored bars: red for positive, blue for negative, and white for no deviation, with darker shades indicating larger differences. See Section~\ref{subsec:league-ranking-deviation} for more information.
+            </figcaption>
+        </figure>
+    </div>
+    
 </body>
 </html>
