@@ -24,17 +24,33 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .figure-container img {
+        .figure-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .subfigure {
+            flex: 0 0 100%; /* Full width by default */
+            max-width: 67%; /* 67% width for alignment */
+            text-align: center;
+        }
+        .subfigure img {
             width: 100%;
             height: auto;
             border: 1px solid #ddd;
             border-radius: 4px;
-            margin-bottom: 10px;
         }
-        .figure-container figcaption {
+        .subfigure figcaption {
             font-size: 0.9em;
             color: #555;
+            margin-top: 10px;
+        }
+        .overall-caption {
             text-align: center;
+            font-size: 0.95em;
+            color: #333;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -42,25 +58,23 @@
     <h1>Visually-supported Topic Modeling for Understanding Behavioral Patterns from Spatio-temporal Events</h1>
 
     <div class="figure-container">
-        <figure>
-            <img src="paper_figures/Used in the paper/Figure 1 (a)-Topic projection using t-SNE.png" alt="t-SNE projection with 7 crossing">
-            
-            <figcaption>Figure 1a: Topic projection using t-SNE has the least distortion with 7 crossing links.</figcaption>
-        </figure>
-    </div>
-
-    <div class="figure-container">
-        <figure>
-            <img src="paper_figures/Used in the paper/Figure 1 (b)-Topic projection using UMAP.png" alt="UMAP projection with 15 crossing links">
-            <figcaption>Figure 1b: Topic projection using UMAP, with 15 crossing links, shows more distortion than t-SNE but less than MDS.</figcaption>
-        </figure>
-    </div>
-
-    <div class="figure-container">
-        <figure>
-            <img src="paper_figures/Used in the paper/Figure 1 (c)-Topic projection using MDS.png" alt="MDS projection with many crossing links">
-            <figcaption>Figure 1c: Topic projection using MDS with many crossing links has the most distortion.</figcaption>
-        </figure>
+        <div class="figure-grid">
+            <figure class="subfigure">
+                <img src="paper_figures/DimensionalityReduction.tsne_perplexity_10_trapezium.png" alt="t-SNE projection with 7 crossing">
+                <figcaption>(a) Topic projection using t-SNE has the least distortion with 7 crossing links.</figcaption>
+            </figure>
+            <figure class="subfigure">
+                <img src="paper_figures/DimensionalityReduction.UMAP_n_neighbors_15_trapezium.png" alt="UMAP projection with 15 crossing links">
+                <figcaption>(b) Topic projection using UMAP, with 15 crossing links, shows more distortion than t-SNE but less than MDS.</figcaption>
+            </figure>
+            <figure class="subfigure">
+                <img src="paper_figures/DimensionalityReduction.MDS_10-29_trapezium.png" alt="MDS projection with many crossing links">
+                <figcaption>(c) Topic projection using MDS with many crossing links has the most distortion.</figcaption>
+            </figure>
+        </div>
+        <div class="overall-caption">
+            1D projections of topics obtained from topic modeling are shown for topic numbers ranging from 10 to 28. Each row represents the projection for a specific topic number. The dimensionality reduction techniques applied in these projections are: (a) t-SNE, (b) UMAP, and (c) MDS. Each topic is connected to its most similar topics in the projections above and below. The projection technique with fewer crossing links (t-SNE in our case with 7 crossings) is the best option for further analysis.
+        </div>
     </div>
 </body>
 </html>
