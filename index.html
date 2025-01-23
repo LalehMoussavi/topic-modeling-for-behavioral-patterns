@@ -17,40 +17,36 @@
             color: #333;
         }
         .figure-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 20px auto;
             background: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .figure-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .subfigure {
-            flex: 0 0 100%; /* Full width by default */
-            max-width: 67%; /* 67% width for alignment */
-            text-align: center;
-        }
-        .subfigure img {
-            width: 100%;
-            height: auto;
+        .figure-container img {
             border: 1px solid #ddd;
             border-radius: 4px;
+            display: block;
+            margin: 0 auto;
         }
-        .subfigure figcaption {
+        .figure-container figcaption {
             font-size: 0.9em;
             color: #555;
             margin-top: 10px;
         }
-        .overall-caption {
-            text-align: center;
-            font-size: 0.95em;
-            color: #333;
-            margin-top: 20px;
+        /* Figure 2a Styling */
+        .figure-2a img {
+            width: 100%;
+            max-width: 1000px; /* Ensure it doesn’t overflow horizontally */
+            height: auto;
+        }
+        /* Figure 2b Styling */
+        .figure-2b img {
+            width: 100%;
+            max-width: 500px; /* Reduce horizontal width */
+            height: auto;
+            max-height: 300px; /* Limit the vertical height */
         }
     </style>
 </head>
@@ -77,19 +73,18 @@
         </div>
     </div>
 
-    <!-- Figure 2a -->
+    <!-- Figures 2a and 2b -->
     <div class="figure-container">
-        <figure class="subfigure">
+        <!-- Figure 2a -->
+        <figure class="figure-2a">
             <img src="paper_figures/Used in the paper/Figure 2 (a)-spatial heatmaps derived from topic modeling, covering topic numbers ranging from 10 to 28.png" alt="Spatial heatmaps derived from topic modeling">
             <figcaption>
                 <strong>Figure 2a:</strong> A comprehensive visualization of topic signatures (spatial heatmaps), derived from topic modeling across a range of topic numbers (10 to 28, as labeled at each line). Each heatmap represents a football pitch, with the darkness of its grid cells proportional to the respective weights in the topic-term matrix. The attacking direction is from bottom to top. The final selected topic number is 16 (indicated by an arrow). The group in the pink rectangle illustrates spatial consistency, while the group in the brown rectangle demonstrates redundancy.
             </figcaption>
         </figure>
-    </div>
-
-    <!-- Figure 2b -->
-    <div class="figure-container">
-        <figure class="subfigure">
+        
+        <!-- Figure 2b -->
+        <figure class="figure-2b">
             <img src="paper_figures/Used in the paper/Figure 2 (b)-Interactive_decomposition.png" alt="Interactive decomposition of selected topics">
             <figcaption>
                 <strong>Figure 2b:</strong> A detailed view of the topics selected within the brown rectangle. The interactive tool highlights topics with cells colored red/blue when higher/lower than the average of the selection. The presence of red cells in the first three rows and a mix of red and blue cells in the last three rows suggests that the cell values have been distributed between two similar topics in the branches.
